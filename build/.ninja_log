@@ -1,0 +1,12 @@
+# ninja log v7
+0	34	1773620162265946610	CMakeFiles/Gecko.dir/src/main.c.o	e9add32263747fc0
+0	31	1773620162266905690	CMakeFiles/Gecko.dir/src/memory.c.o	e8cb4eb9a8be4886
+0	31	1773620162266720915	CMakeFiles/Gecko.dir/src/chunk.c.o	1d9bd4e86701ea8a
+0	27	1773620498930941385	CMakeFiles/Gecko.dir/src/debug.c.o	ba7edca14b224d6
+71	116	1774351586838943294	Gecko	21f94a696cea9336
+1	64	1773572266103807782	CMakeFiles/Gecko.dir/src/value.c.o	60fce46a9f125ba6
+1	70	1774351586767328997	CMakeFiles/Gecko.dir/src/vm.c.o	29f29c853f9a234e
+1	71	1774351586768858656	CMakeFiles/Gecko.dir/src/compiler.c.o	15c0630f850d4316
+1	31	1773572494316161235	CMakeFiles/Gecko.dir/src/scanner.c.o	3ffcfa1eef0ab6ef
+1	31	1773620162267221727	CMakeFiles/Gecko.dir/src/object.c.o	2ff5d796922c7ec
+1	32	1773596583899583011	CMakeFiles/Gecko.dir/src/table.c.o	48f85cf4823b2d37

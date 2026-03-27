@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/joaco/CGecko/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
