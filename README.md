@@ -1,8 +1,10 @@
 <div align="center">
 # CGecko
+  
 <h1>
   <img src="gecko.png" alt="Logo Gecko" width="100" height="100" style="border-radius: 50%; vertical-align: middle; margin-left: 10px;">
 </h1>
+
 *A bytecode interpreter written in C*
 
 ![Language](https://img.shields.io/badge/language-C-orange)
