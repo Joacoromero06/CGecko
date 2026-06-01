@@ -1,4 +1,8 @@
 <div align="center">
+<h1>
+  CGecko
+  <img src="gecko.png" alt="Logo Gecko" width="50" height="50" style="border-radius: 50%; vertical-align: middle; margin-left: 10px;">
+</h1>
 
 # CGecko
 
@@ -21,7 +25,7 @@ CGecko es un interprete que compila a bytecode para el Gecko Language. Su arquit
 ## Architecture
 
 <div align="center">
-![Arquitectura de CGecko](Interpreter_diagram (1).png)
+ <img src="Interpreter_Diagram%20(1).png" alt="Arquitectura de CGecko" width="80%">
 </div>
 
 ---
