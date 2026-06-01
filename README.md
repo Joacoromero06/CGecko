@@ -1,14 +1,13 @@
 <div align="center">
 <h1>
-  CGecko
-  <img src="gecko.png" alt="Logo Gecko" width="50" height="50" style="border-radius: 50%; vertical-align: middle; margin-left: 10px;">
+  <img src="gecko.png" alt="Logo Gecko" width="100" height="100" style="border-radius: 50%; vertical-align: middle; margin-left: 10px;">
 </h1>
 
 # CGecko
 
 *A bytecode interpreter written in C*
 
-![Language](https://img.shields.io/badge/language-C%2B%2B17-blue)
+![Language](https://img.shields.io/badge/language-C-orange)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Build](https://img.shields.io/badge/build-passing-brightgreen)
 
@@ -25,7 +24,7 @@ CGecko es un interprete que compila a bytecode para el Gecko Language. Su arquit
 ## Architecture
 
 <div align="center">
- <img src="Interpreter_Diagram%20(1).png" alt="Arquitectura de CGecko" width="80%">
+ <img src="arquitectura.png" alt="Arquitectura de CGecko" width="80%">
 </div>
 
 ---
