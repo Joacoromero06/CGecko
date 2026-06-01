@@ -1,10 +1,8 @@
 <div align="center">
+# CGecko
 <h1>
   <img src="gecko.png" alt="Logo Gecko" width="100" height="100" style="border-radius: 50%; vertical-align: middle; margin-left: 10px;">
 </h1>
-
-# CGecko
-
 *A bytecode interpreter written in C*
 
 ![Language](https://img.shields.io/badge/language-C-orange)
@@ -35,7 +33,7 @@ CGecko es un interprete que compila a bytecode para el Gecko Language. Su arquit
 git clone https://github.com/Joacoromero06/CGecko
 cd cgecko
 make
-./cgecko examples/hello.gk
+./cgecko test/t1.txt
 ```
 
 ---
