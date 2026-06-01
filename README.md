@@ -2,8 +2,6 @@
 <h1>
   <img src="gecko.png" alt="Logo Gecko" width="120" height="120" style="border-radius: 50%; vertical-align: middle; margin-left: 10px;">
 </h1>
-
-# CGecko
 *A bytecode interpreter written in C*
 
 ![Language](https://img.shields.io/badge/language-C-orange)
