@@ -8,3 +8,5 @@ int disambleInstruction(Chunk *, int);
 int simpleInstruction(const char*, int);
 int constantInstruction(const char*, Chunk*, int);
 int indexInstruction(const char*, Chunk*, int);
+int jumpInstruction(const char*, int, Chunk*, int);
+

@@ -5,7 +5,7 @@ events:
     kind: "find-v1"
     backtrace:
       - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_UNAME"
     description: "Path to a program."
@@ -20,8 +20,11 @@ events:
     names:
       - "uname"
     candidate_directories:
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/snapd/snap/bin/"
       - "/usr/local/sbin/"
       - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
@@ -29,14 +32,20 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
       - "/bin/"
     searched_directories:
+      - "/home/joaco/.juliaup/bin/uname"
+      - "/home/joaco/.local/bin/uname"
       - "/usr/local/bin/uname"
     found: "/usr/bin/uname"
     search_context:
       ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
         - "/usr/local/sbin"
         - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
@@ -44,18 +53,19 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
   -
     kind: "message-v1"
     backtrace:
       - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     message: |
-      The system is: Linux - 6.19.6-arch1-1 - x86_64
+      The system is: Linux - 7.0.11-arch1-1 - x86_64
   -
     kind: "find-v1"
     backtrace:
       - "/usr/share/cmake/Modules/CMakeNinjaFindMake.cmake:5 (find_program)"
-      - "CMakeLists.txt"
+      - "CMakeLists.txt:2 (project)"
     mode: "program"
     variable: "CMAKE_MAKE_PROGRAM"
     description: "Program used to build from build.ninja files."
@@ -72,8 +82,11 @@ events:
       - "ninja"
       - "samu"
     candidate_directories:
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
       - "/usr/local/bin/"
       - "/usr/bin/"
+      - "/var/lib/snapd/snap/bin/"
       - "/usr/local/sbin/"
       - "/var/lib/flatpak/exports/bin/"
       - "/usr/lib/jvm/default/bin/"
@@ -81,7 +94,14 @@ events:
       - "/usr/bin/vendor_perl/"
       - "/usr/bin/core_perl/"
       - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
     searched_directories:
+      - "/home/joaco/.juliaup/bin/ninja-build"
+      - "/home/joaco/.juliaup/bin/ninja"
+      - "/home/joaco/.juliaup/bin/samu"
+      - "/home/joaco/.local/bin/ninja-build"
+      - "/home/joaco/.local/bin/ninja"
+      - "/home/joaco/.local/bin/samu"
       - "/usr/local/bin/ninja-build"
       - "/usr/local/bin/ninja"
       - "/usr/local/bin/samu"
@@ -89,8 +109,11 @@ events:
     found: "/usr/bin/ninja"
     search_context:
       ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
         - "/usr/local/bin"
         - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
         - "/usr/local/sbin"
         - "/var/lib/flatpak/exports/bin"
         - "/usr/lib/jvm/default/bin"
@@ -98,1568 +121,66 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
   -
     kind: "find-v1"
     backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
-    mode: "file"
-    variable: "src_in"
-    description: "Path to a file."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "CMakeCCompilerId.c.in"
-    candidate_directories:
-      - "/usr/share/cmake/Modules/"
-    found: "/usr/share/cmake/Modules/CMakeCCompilerId.c.in"
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
-    message: |
-      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: /usr/bin/clang 
-      Build flags: 
-      Id flags:  
-      
-      The output was:
-      0
-      
-      
-      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
-      
-      The C compiler identification is Clang, found in:
-        /home/joaco/CGecko/build/CMakeFiles/4.2.3/CompilerIdC/a.out
-      
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_AR"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "llvm-ar"
-      - "ar"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/llvm-ar"
-      - "/usr/local/bin/llvm-ar"
-      - "/usr/local/sbin/llvm-ar"
-      - "/var/lib/flatpak/exports/bin/llvm-ar"
-      - "/usr/lib/jvm/default/bin/llvm-ar"
-      - "/usr/bin/site_perl/llvm-ar"
-      - "/usr/bin/vendor_perl/llvm-ar"
-      - "/usr/bin/core_perl/llvm-ar"
-      - "/usr/lib/rustup/bin/llvm-ar"
-    found: "/usr/bin/ar"
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_RANLIB"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "llvm-ranlib"
-      - "ranlib"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/llvm-ranlib"
-      - "/usr/local/bin/llvm-ranlib"
-      - "/usr/local/sbin/llvm-ranlib"
-      - "/var/lib/flatpak/exports/bin/llvm-ranlib"
-      - "/usr/lib/jvm/default/bin/llvm-ranlib"
-      - "/usr/bin/site_perl/llvm-ranlib"
-      - "/usr/bin/vendor_perl/llvm-ranlib"
-      - "/usr/bin/core_perl/llvm-ranlib"
-      - "/usr/lib/rustup/bin/llvm-ranlib"
-    found: "/usr/bin/ranlib"
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_STRIP"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "llvm-strip"
-      - "strip"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/llvm-strip"
-      - "/usr/local/bin/llvm-strip"
-      - "/usr/local/sbin/llvm-strip"
-      - "/var/lib/flatpak/exports/bin/llvm-strip"
-      - "/usr/lib/jvm/default/bin/llvm-strip"
-      - "/usr/bin/site_perl/llvm-strip"
-      - "/usr/bin/vendor_perl/llvm-strip"
-      - "/usr/bin/core_perl/llvm-strip"
-      - "/usr/lib/rustup/bin/llvm-strip"
-    found: "/usr/bin/strip"
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_LINKER"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "ld.lld"
-      - "ld"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    found: "/usr/bin/ld.lld"
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_NM"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "llvm-nm"
-      - "nm"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/llvm-nm"
-      - "/usr/local/bin/llvm-nm"
-      - "/usr/local/sbin/llvm-nm"
-      - "/var/lib/flatpak/exports/bin/llvm-nm"
-      - "/usr/lib/jvm/default/bin/llvm-nm"
-      - "/usr/bin/site_perl/llvm-nm"
-      - "/usr/bin/vendor_perl/llvm-nm"
-      - "/usr/bin/core_perl/llvm-nm"
-      - "/usr/lib/rustup/bin/llvm-nm"
-    found: "/usr/bin/nm"
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_OBJDUMP"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "llvm-objdump"
-      - "objdump"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/llvm-objdump"
-      - "/usr/local/bin/llvm-objdump"
-      - "/usr/local/sbin/llvm-objdump"
-      - "/var/lib/flatpak/exports/bin/llvm-objdump"
-      - "/usr/lib/jvm/default/bin/llvm-objdump"
-      - "/usr/bin/site_perl/llvm-objdump"
-      - "/usr/bin/vendor_perl/llvm-objdump"
-      - "/usr/bin/core_perl/llvm-objdump"
-      - "/usr/lib/rustup/bin/llvm-objdump"
-    found: "/usr/bin/objdump"
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_OBJCOPY"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "llvm-objcopy"
-      - "objcopy"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/llvm-objcopy"
-      - "/usr/local/bin/llvm-objcopy"
-      - "/usr/local/sbin/llvm-objcopy"
-      - "/var/lib/flatpak/exports/bin/llvm-objcopy"
-      - "/usr/lib/jvm/default/bin/llvm-objcopy"
-      - "/usr/bin/site_perl/llvm-objcopy"
-      - "/usr/bin/vendor_perl/llvm-objcopy"
-      - "/usr/bin/core_perl/llvm-objcopy"
-      - "/usr/lib/rustup/bin/llvm-objcopy"
-    found: "/usr/bin/objcopy"
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_READELF"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "llvm-readelf"
-      - "readelf"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/llvm-readelf"
-      - "/usr/local/bin/llvm-readelf"
-      - "/usr/local/sbin/llvm-readelf"
-      - "/var/lib/flatpak/exports/bin/llvm-readelf"
-      - "/usr/lib/jvm/default/bin/llvm-readelf"
-      - "/usr/bin/site_perl/llvm-readelf"
-      - "/usr/bin/vendor_perl/llvm-readelf"
-      - "/usr/bin/core_perl/llvm-readelf"
-      - "/usr/lib/rustup/bin/llvm-readelf"
-    found: "/usr/bin/readelf"
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_DLLTOOL"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "llvm-dlltool"
-      - "dlltool"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/llvm-dlltool"
-      - "/usr/local/bin/llvm-dlltool"
-      - "/usr/local/sbin/llvm-dlltool"
-      - "/var/lib/flatpak/exports/bin/llvm-dlltool"
-      - "/usr/lib/jvm/default/bin/llvm-dlltool"
-      - "/usr/bin/site_perl/llvm-dlltool"
-      - "/usr/bin/vendor_perl/llvm-dlltool"
-      - "/usr/bin/core_perl/llvm-dlltool"
-      - "/usr/lib/rustup/bin/llvm-dlltool"
-      - "/usr/bin/dlltool"
-      - "/usr/local/bin/dlltool"
-      - "/usr/local/sbin/dlltool"
-      - "/var/lib/flatpak/exports/bin/dlltool"
-      - "/usr/lib/jvm/default/bin/dlltool"
-      - "/usr/bin/site_perl/dlltool"
-      - "/usr/bin/vendor_perl/dlltool"
-      - "/usr/bin/core_perl/dlltool"
-      - "/usr/lib/rustup/bin/dlltool"
-    found: false
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_ADDR2LINE"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "llvm-addr2line"
-      - "addr2line"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/llvm-addr2line"
-      - "/usr/local/bin/llvm-addr2line"
-      - "/usr/local/sbin/llvm-addr2line"
-      - "/var/lib/flatpak/exports/bin/llvm-addr2line"
-      - "/usr/lib/jvm/default/bin/llvm-addr2line"
-      - "/usr/bin/site_perl/llvm-addr2line"
-      - "/usr/bin/vendor_perl/llvm-addr2line"
-      - "/usr/bin/core_perl/llvm-addr2line"
-      - "/usr/lib/rustup/bin/llvm-addr2line"
-    found: "/usr/bin/addr2line"
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_TAPI"
-    description: "Path to a program."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "tapi"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/tapi"
-      - "/usr/local/bin/tapi"
-      - "/usr/local/sbin/tapi"
-      - "/var/lib/flatpak/exports/bin/tapi"
-      - "/usr/lib/jvm/default/bin/tapi"
-      - "/usr/bin/site_perl/tapi"
-      - "/usr/bin/vendor_perl/tapi"
-      - "/usr/bin/core_perl/tapi"
-      - "/usr/lib/rustup/bin/tapi"
-    found: false
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/Compiler/Clang-FindBinUtils.cmake:26 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_C_COMPILER_AR"
-    description: "LLVM archiver"
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "llvm-ar-21.1"
-      - "llvm-ar-21"
-      - "llvm-ar21"
-      - "llvm-ar"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/llvm-ar-21.1"
-      - "/usr/local/bin/llvm-ar-21.1"
-      - "/usr/local/sbin/llvm-ar-21.1"
-      - "/var/lib/flatpak/exports/bin/llvm-ar-21.1"
-      - "/usr/lib/jvm/default/bin/llvm-ar-21.1"
-      - "/usr/bin/site_perl/llvm-ar-21.1"
-      - "/usr/bin/vendor_perl/llvm-ar-21.1"
-      - "/usr/bin/core_perl/llvm-ar-21.1"
-      - "/usr/lib/rustup/bin/llvm-ar-21.1"
-      - "/usr/bin/llvm-ar-21"
-      - "/usr/local/bin/llvm-ar-21"
-      - "/usr/local/sbin/llvm-ar-21"
-      - "/var/lib/flatpak/exports/bin/llvm-ar-21"
-      - "/usr/lib/jvm/default/bin/llvm-ar-21"
-      - "/usr/bin/site_perl/llvm-ar-21"
-      - "/usr/bin/vendor_perl/llvm-ar-21"
-      - "/usr/bin/core_perl/llvm-ar-21"
-      - "/usr/lib/rustup/bin/llvm-ar-21"
-      - "/usr/bin/llvm-ar21"
-      - "/usr/local/bin/llvm-ar21"
-      - "/usr/local/sbin/llvm-ar21"
-      - "/var/lib/flatpak/exports/bin/llvm-ar21"
-      - "/usr/lib/jvm/default/bin/llvm-ar21"
-      - "/usr/bin/site_perl/llvm-ar21"
-      - "/usr/bin/vendor_perl/llvm-ar21"
-      - "/usr/bin/core_perl/llvm-ar21"
-      - "/usr/lib/rustup/bin/llvm-ar21"
-      - "/usr/bin/llvm-ar"
-      - "/usr/local/bin/llvm-ar"
-      - "/usr/local/sbin/llvm-ar"
-      - "/var/lib/flatpak/exports/bin/llvm-ar"
-      - "/usr/lib/jvm/default/bin/llvm-ar"
-      - "/usr/bin/site_perl/llvm-ar"
-      - "/usr/bin/vendor_perl/llvm-ar"
-      - "/usr/bin/core_perl/llvm-ar"
-      - "/usr/lib/rustup/bin/llvm-ar"
-    found: false
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/Compiler/Clang-FindBinUtils.cmake:38 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_C_COMPILER_RANLIB"
-    description: "Generate index for LLVM archive"
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "llvm-ranlib-21.1"
-      - "llvm-ranlib-21"
-      - "llvm-ranlib21"
-      - "llvm-ranlib"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/llvm-ranlib-21.1"
-      - "/usr/local/bin/llvm-ranlib-21.1"
-      - "/usr/local/sbin/llvm-ranlib-21.1"
-      - "/var/lib/flatpak/exports/bin/llvm-ranlib-21.1"
-      - "/usr/lib/jvm/default/bin/llvm-ranlib-21.1"
-      - "/usr/bin/site_perl/llvm-ranlib-21.1"
-      - "/usr/bin/vendor_perl/llvm-ranlib-21.1"
-      - "/usr/bin/core_perl/llvm-ranlib-21.1"
-      - "/usr/lib/rustup/bin/llvm-ranlib-21.1"
-      - "/usr/bin/llvm-ranlib-21"
-      - "/usr/local/bin/llvm-ranlib-21"
-      - "/usr/local/sbin/llvm-ranlib-21"
-      - "/var/lib/flatpak/exports/bin/llvm-ranlib-21"
-      - "/usr/lib/jvm/default/bin/llvm-ranlib-21"
-      - "/usr/bin/site_perl/llvm-ranlib-21"
-      - "/usr/bin/vendor_perl/llvm-ranlib-21"
-      - "/usr/bin/core_perl/llvm-ranlib-21"
-      - "/usr/lib/rustup/bin/llvm-ranlib-21"
-      - "/usr/bin/llvm-ranlib21"
-      - "/usr/local/bin/llvm-ranlib21"
-      - "/usr/local/sbin/llvm-ranlib21"
-      - "/var/lib/flatpak/exports/bin/llvm-ranlib21"
-      - "/usr/lib/jvm/default/bin/llvm-ranlib21"
-      - "/usr/bin/site_perl/llvm-ranlib21"
-      - "/usr/bin/vendor_perl/llvm-ranlib21"
-      - "/usr/bin/core_perl/llvm-ranlib21"
-      - "/usr/lib/rustup/bin/llvm-ranlib21"
-      - "/usr/bin/llvm-ranlib"
-      - "/usr/local/bin/llvm-ranlib"
-      - "/usr/local/sbin/llvm-ranlib"
-      - "/var/lib/flatpak/exports/bin/llvm-ranlib"
-      - "/usr/lib/jvm/default/bin/llvm-ranlib"
-      - "/usr/bin/site_perl/llvm-ranlib"
-      - "/usr/bin/vendor_perl/llvm-ranlib"
-      - "/usr/bin/core_perl/llvm-ranlib"
-      - "/usr/lib/rustup/bin/llvm-ranlib"
-    found: false
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/Compiler/Clang-FindBinUtils.cmake:50 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_C_COMPILER_CLANG_SCAN_DEPS"
-    description: "`clang-scan-deps` dependency scanner"
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "clang-scan-deps-21.1"
-      - "clang-scan-deps-21"
-      - "clang-scan-deps21"
-      - "clang-scan-deps"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/clang-scan-deps-21.1"
-      - "/usr/local/bin/clang-scan-deps-21.1"
-      - "/usr/local/sbin/clang-scan-deps-21.1"
-      - "/var/lib/flatpak/exports/bin/clang-scan-deps-21.1"
-      - "/usr/lib/jvm/default/bin/clang-scan-deps-21.1"
-      - "/usr/bin/site_perl/clang-scan-deps-21.1"
-      - "/usr/bin/vendor_perl/clang-scan-deps-21.1"
-      - "/usr/bin/core_perl/clang-scan-deps-21.1"
-      - "/usr/lib/rustup/bin/clang-scan-deps-21.1"
-      - "/usr/bin/clang-scan-deps-21"
-      - "/usr/local/bin/clang-scan-deps-21"
-      - "/usr/local/sbin/clang-scan-deps-21"
-      - "/var/lib/flatpak/exports/bin/clang-scan-deps-21"
-      - "/usr/lib/jvm/default/bin/clang-scan-deps-21"
-      - "/usr/bin/site_perl/clang-scan-deps-21"
-      - "/usr/bin/vendor_perl/clang-scan-deps-21"
-      - "/usr/bin/core_perl/clang-scan-deps-21"
-      - "/usr/lib/rustup/bin/clang-scan-deps-21"
-      - "/usr/bin/clang-scan-deps21"
-      - "/usr/local/bin/clang-scan-deps21"
-      - "/usr/local/sbin/clang-scan-deps21"
-      - "/var/lib/flatpak/exports/bin/clang-scan-deps21"
-      - "/usr/lib/jvm/default/bin/clang-scan-deps21"
-      - "/usr/bin/site_perl/clang-scan-deps21"
-      - "/usr/bin/vendor_perl/clang-scan-deps21"
-      - "/usr/bin/core_perl/clang-scan-deps21"
-      - "/usr/lib/rustup/bin/clang-scan-deps21"
-    found: "/usr/bin/clang-scan-deps"
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:462 (find_file)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:500 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
-    mode: "file"
-    variable: "src_in"
-    description: "Path to a file."
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: true
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "CMakeCXXCompilerId.cpp.in"
-    candidate_directories:
-      - "/usr/share/cmake/Modules/"
-    found: "/usr/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
-      - "CMakeLists.txt"
-    message: |
-      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
-      Compiler: /usr/bin/clang++ 
-      Build flags: 
-      Id flags:  
-      
-      The output was:
-      0
-      
-      
-      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
-      
-      The CXX compiler identification is Clang, found in:
-        /home/joaco/CGecko/build/CMakeFiles/4.2.3/CompilerIdCXX/a.out
-      
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/Compiler/Clang-FindBinUtils.cmake:26 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_CXX_COMPILER_AR"
-    description: "LLVM archiver"
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "llvm-ar-21.1"
-      - "llvm-ar-21"
-      - "llvm-ar21"
-      - "llvm-ar"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/llvm-ar-21.1"
-      - "/usr/local/bin/llvm-ar-21.1"
-      - "/usr/local/sbin/llvm-ar-21.1"
-      - "/var/lib/flatpak/exports/bin/llvm-ar-21.1"
-      - "/usr/lib/jvm/default/bin/llvm-ar-21.1"
-      - "/usr/bin/site_perl/llvm-ar-21.1"
-      - "/usr/bin/vendor_perl/llvm-ar-21.1"
-      - "/usr/bin/core_perl/llvm-ar-21.1"
-      - "/usr/lib/rustup/bin/llvm-ar-21.1"
-      - "/usr/bin/llvm-ar-21"
-      - "/usr/local/bin/llvm-ar-21"
-      - "/usr/local/sbin/llvm-ar-21"
-      - "/var/lib/flatpak/exports/bin/llvm-ar-21"
-      - "/usr/lib/jvm/default/bin/llvm-ar-21"
-      - "/usr/bin/site_perl/llvm-ar-21"
-      - "/usr/bin/vendor_perl/llvm-ar-21"
-      - "/usr/bin/core_perl/llvm-ar-21"
-      - "/usr/lib/rustup/bin/llvm-ar-21"
-      - "/usr/bin/llvm-ar21"
-      - "/usr/local/bin/llvm-ar21"
-      - "/usr/local/sbin/llvm-ar21"
-      - "/var/lib/flatpak/exports/bin/llvm-ar21"
-      - "/usr/lib/jvm/default/bin/llvm-ar21"
-      - "/usr/bin/site_perl/llvm-ar21"
-      - "/usr/bin/vendor_perl/llvm-ar21"
-      - "/usr/bin/core_perl/llvm-ar21"
-      - "/usr/lib/rustup/bin/llvm-ar21"
-      - "/usr/bin/llvm-ar"
-      - "/usr/local/bin/llvm-ar"
-      - "/usr/local/sbin/llvm-ar"
-      - "/var/lib/flatpak/exports/bin/llvm-ar"
-      - "/usr/lib/jvm/default/bin/llvm-ar"
-      - "/usr/bin/site_perl/llvm-ar"
-      - "/usr/bin/vendor_perl/llvm-ar"
-      - "/usr/bin/core_perl/llvm-ar"
-      - "/usr/lib/rustup/bin/llvm-ar"
-    found: false
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/Compiler/Clang-FindBinUtils.cmake:38 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_CXX_COMPILER_RANLIB"
-    description: "Generate index for LLVM archive"
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "llvm-ranlib-21.1"
-      - "llvm-ranlib-21"
-      - "llvm-ranlib21"
-      - "llvm-ranlib"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/llvm-ranlib-21.1"
-      - "/usr/local/bin/llvm-ranlib-21.1"
-      - "/usr/local/sbin/llvm-ranlib-21.1"
-      - "/var/lib/flatpak/exports/bin/llvm-ranlib-21.1"
-      - "/usr/lib/jvm/default/bin/llvm-ranlib-21.1"
-      - "/usr/bin/site_perl/llvm-ranlib-21.1"
-      - "/usr/bin/vendor_perl/llvm-ranlib-21.1"
-      - "/usr/bin/core_perl/llvm-ranlib-21.1"
-      - "/usr/lib/rustup/bin/llvm-ranlib-21.1"
-      - "/usr/bin/llvm-ranlib-21"
-      - "/usr/local/bin/llvm-ranlib-21"
-      - "/usr/local/sbin/llvm-ranlib-21"
-      - "/var/lib/flatpak/exports/bin/llvm-ranlib-21"
-      - "/usr/lib/jvm/default/bin/llvm-ranlib-21"
-      - "/usr/bin/site_perl/llvm-ranlib-21"
-      - "/usr/bin/vendor_perl/llvm-ranlib-21"
-      - "/usr/bin/core_perl/llvm-ranlib-21"
-      - "/usr/lib/rustup/bin/llvm-ranlib-21"
-      - "/usr/bin/llvm-ranlib21"
-      - "/usr/local/bin/llvm-ranlib21"
-      - "/usr/local/sbin/llvm-ranlib21"
-      - "/var/lib/flatpak/exports/bin/llvm-ranlib21"
-      - "/usr/lib/jvm/default/bin/llvm-ranlib21"
-      - "/usr/bin/site_perl/llvm-ranlib21"
-      - "/usr/bin/vendor_perl/llvm-ranlib21"
-      - "/usr/bin/core_perl/llvm-ranlib21"
-      - "/usr/lib/rustup/bin/llvm-ranlib21"
-      - "/usr/bin/llvm-ranlib"
-      - "/usr/local/bin/llvm-ranlib"
-      - "/usr/local/sbin/llvm-ranlib"
-      - "/var/lib/flatpak/exports/bin/llvm-ranlib"
-      - "/usr/lib/jvm/default/bin/llvm-ranlib"
-      - "/usr/bin/site_perl/llvm-ranlib"
-      - "/usr/bin/vendor_perl/llvm-ranlib"
-      - "/usr/bin/core_perl/llvm-ranlib"
-      - "/usr/lib/rustup/bin/llvm-ranlib"
-    found: false
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "find-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/Compiler/Clang-FindBinUtils.cmake:50 (find_program)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
-      - "CMakeLists.txt"
-    mode: "program"
-    variable: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS"
-    description: "`clang-scan-deps` dependency scanner"
-    settings:
-      SearchFramework: "NEVER"
-      SearchAppBundle: "NEVER"
-      CMAKE_FIND_USE_CMAKE_PATH: false
-      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
-      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
-      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
-      CMAKE_FIND_USE_INSTALL_PREFIX: true
-    names:
-      - "clang-scan-deps-21.1"
-      - "clang-scan-deps-21"
-      - "clang-scan-deps21"
-      - "clang-scan-deps"
-    candidate_directories:
-      - "/usr/bin/"
-      - "/usr/local/bin/"
-      - "/usr/local/sbin/"
-      - "/var/lib/flatpak/exports/bin/"
-      - "/usr/lib/jvm/default/bin/"
-      - "/usr/bin/site_perl/"
-      - "/usr/bin/vendor_perl/"
-      - "/usr/bin/core_perl/"
-      - "/usr/lib/rustup/bin/"
-    searched_directories:
-      - "/usr/bin/clang-scan-deps-21.1"
-      - "/usr/local/bin/clang-scan-deps-21.1"
-      - "/usr/local/sbin/clang-scan-deps-21.1"
-      - "/var/lib/flatpak/exports/bin/clang-scan-deps-21.1"
-      - "/usr/lib/jvm/default/bin/clang-scan-deps-21.1"
-      - "/usr/bin/site_perl/clang-scan-deps-21.1"
-      - "/usr/bin/vendor_perl/clang-scan-deps-21.1"
-      - "/usr/bin/core_perl/clang-scan-deps-21.1"
-      - "/usr/lib/rustup/bin/clang-scan-deps-21.1"
-      - "/usr/bin/clang-scan-deps-21"
-      - "/usr/local/bin/clang-scan-deps-21"
-      - "/usr/local/sbin/clang-scan-deps-21"
-      - "/var/lib/flatpak/exports/bin/clang-scan-deps-21"
-      - "/usr/lib/jvm/default/bin/clang-scan-deps-21"
-      - "/usr/bin/site_perl/clang-scan-deps-21"
-      - "/usr/bin/vendor_perl/clang-scan-deps-21"
-      - "/usr/bin/core_perl/clang-scan-deps-21"
-      - "/usr/lib/rustup/bin/clang-scan-deps-21"
-      - "/usr/bin/clang-scan-deps21"
-      - "/usr/local/bin/clang-scan-deps21"
-      - "/usr/local/sbin/clang-scan-deps21"
-      - "/var/lib/flatpak/exports/bin/clang-scan-deps21"
-      - "/usr/lib/jvm/default/bin/clang-scan-deps21"
-      - "/usr/bin/site_perl/clang-scan-deps21"
-      - "/usr/bin/vendor_perl/clang-scan-deps21"
-      - "/usr/bin/core_perl/clang-scan-deps21"
-      - "/usr/lib/rustup/bin/clang-scan-deps21"
-    found: "/usr/bin/clang-scan-deps"
-    search_context:
-      ENV{PATH}:
-        - "/usr/local/bin"
-        - "/usr/bin"
-        - "/usr/local/sbin"
-        - "/var/lib/flatpak/exports/bin"
-        - "/usr/lib/jvm/default/bin"
-        - "/usr/bin/site_perl"
-        - "/usr/bin/vendor_perl"
-        - "/usr/bin/core_perl"
-        - "/usr/lib/rustup/bin"
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
-      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
-    checks:
-      - "Detecting C compiler ABI info"
-    directories:
-      source: "/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-zJpSyG"
-      binary: "/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-zJpSyG"
-    cmakeVariables:
-      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps"
-      CMAKE_C_FLAGS: ""
-      CMAKE_EXE_LINKER_FLAGS: ""
-    buildResult:
-      variable: "CMAKE_C_ABI_COMPILED"
-      cached: true
-      stdout: |
-        Change Dir: '/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-zJpSyG'
-        
-        Run Build Command(s): /usr/bin/ninja -v cmTC_3d86b
-        [1/2] /usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
-        clang version 21.1.8
-        Target: x86_64-pc-linux-gnu
-        Thread model: posix
-        InstalledDir: /usr/bin
-        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/15.2.1
-        Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1
-        Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1
-        Candidate multilib: .;@m64
-        Candidate multilib: 32;@m32
-        Selected multilib: .;@m64
-         (in-process)
-         "/usr/bin/clang-21" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-zJpSyG -v -fcoverage-compilation-dir=/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-zJpSyG -resource-dir /usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c
-        clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-pc-linux-gnu
-        ignoring nonexistent directory "/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include"
-        ignoring nonexistent directory "/include"
-        #include "..." search starts here:
-        #include <...> search starts here:
-         /usr/lib/clang/21/include
-         /usr/local/include
-         /usr/include
-        End of search list.
-        [2/2] : && /usr/bin/clang  -v -Wl,-v CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o -o cmTC_3d86b   && :
-        clang version 21.1.8
-        Target: x86_64-pc-linux-gnu
-        Thread model: posix
-        InstalledDir: /usr/bin
-        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/15.2.1
-        Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1
-        Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1
-        Candidate multilib: .;@m64
-        Candidate multilib: 32;@m32
-        Selected multilib: .;@m64
-         "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3d86b /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o
-        GNU ld (GNU Binutils) 2.46
-        
-      exitCode: 0
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
-      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
-    message: |
-      Parsed C implicit include dir info: rv=done
-        found start of include info
-        found start of implicit include info
-          add: [/usr/lib/clang/21/include]
-          add: [/usr/local/include]
-          add: [/usr/include]
-        end of search list found
-        collapse include dir [/usr/lib/clang/21/include] ==> [/usr/lib/clang/21/include]
-        collapse include dir [/usr/local/include] ==> [/usr/local/include]
-        collapse include dir [/usr/include] ==> [/usr/include]
-        implicit include dirs: [/usr/lib/clang/21/include;/usr/local/include;/usr/include]
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
-      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
-    message: |
-      Parsed C implicit link information:
-        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-zJpSyG']
-        ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_3d86b]
-        ignore line: [[1/2] /usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
-        ignore line: [clang version 21.1.8]
-        ignore line: [Target: x86_64-pc-linux-gnu]
-        ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /usr/bin]
-        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Candidate multilib: .]
-        ignore line: [@m64]
-        ignore line: [Candidate multilib: 32]
-        ignore line: [@m32]
-        ignore line: [Selected multilib: .]
-        ignore line: [@m64]
-        ignore line: [ (in-process)]
-        ignore line: [ "/usr/bin/clang-21" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-zJpSyG -v -fcoverage-compilation-dir=/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-zJpSyG -resource-dir /usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
-        ignore line: [clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-pc-linux-gnu]
-        ignore line: [ignoring nonexistent directory "/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include"]
-        ignore line: [ignoring nonexistent directory "/include"]
-        ignore line: [#include "..." search starts here:]
-        ignore line: [#include <...> search starts here:]
-        ignore line: [ /usr/lib/clang/21/include]
-        ignore line: [ /usr/local/include]
-        ignore line: [ /usr/include]
-        ignore line: [End of search list.]
-        ignore line: [[2/2] : && /usr/bin/clang  -v -Wl -v CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o -o cmTC_3d86b   && :]
-        ignore line: [clang version 21.1.8]
-        ignore line: [Target: x86_64-pc-linux-gnu]
-        ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /usr/bin]
-        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Candidate multilib: .]
-        ignore line: [@m64]
-        ignore line: [Candidate multilib: 32]
-        ignore line: [@m32]
-        ignore line: [Selected multilib: .]
-        ignore line: [@m64]
-        link line: [ "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_3d86b /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o]
-          arg [/usr/bin/ld] ==> ignore
-          arg [--hash-style=gnu] ==> ignore
-          arg [--build-id] ==> ignore
-          arg [--eh-frame-hdr] ==> ignore
-          arg [-m] ==> ignore
-          arg [elf_x86_64] ==> ignore
-          arg [-pie] ==> ignore
-          arg [-dynamic-linker] ==> ignore
-          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
-          arg [-o] ==> ignore
-          arg [cmTC_3d86b] ==> ignore
-          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o]
-          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o]
-          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
-          arg [-L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1] ==> dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-          arg [-L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64] ==> dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64]
-          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
-          arg [-L/usr/lib64] ==> dir [/usr/lib64]
-          arg [-L/lib] ==> dir [/lib]
-          arg [-L/usr/lib] ==> dir [/usr/lib]
-          arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_3d86b.dir/CMakeCCompilerABI.c.o] ==> ignore
-          arg [-lgcc] ==> lib [gcc]
-          arg [--as-needed] ==> ignore
-          arg [-lgcc_s] ==> lib [gcc_s]
-          arg [--no-as-needed] ==> ignore
-          arg [-lc] ==> lib [c]
-          arg [-lgcc] ==> lib [gcc]
-          arg [--as-needed] ==> ignore
-          arg [-lgcc_s] ==> lib [gcc_s]
-          arg [--no-as-needed] ==> ignore
-          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
-          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o]
-        linker tool for 'C': /usr/bin/ld
-        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o] ==> [/usr/lib64/Scrt1.o]
-        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
-        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> [/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
-        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> [/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
-        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
-        collapse library dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1] ==> [/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-        collapse library dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64] ==> [/usr/lib64]
-        collapse library dir [/lib/../lib64] ==> [/lib64]
-        collapse library dir [/usr/lib64] ==> [/usr/lib64]
-        collapse library dir [/lib] ==> [/lib]
-        collapse library dir [/usr/lib] ==> [/usr/lib]
-        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
-        implicit objs: [/usr/lib64/Scrt1.o;/usr/lib64/crti.o;/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o;/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o;/usr/lib64/crtn.o]
-        implicit dirs: [/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1;/usr/lib64;/lib64;/lib;/usr/lib]
-        implicit fwks: []
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
-      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
-    message: |
-      Running the C compiler's linker: "/usr/bin/ld" "-v"
-      GNU ld (GNU Binutils) 2.46
-  -
-    kind: "try_compile-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:83 (try_compile)"
-      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
-    checks:
-      - "Detecting CXX compiler ABI info"
-    directories:
-      source: "/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-D5RUY3"
-      binary: "/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-D5RUY3"
-    cmakeVariables:
-      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps"
-      CMAKE_CXX_FLAGS: ""
-      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
-      CMAKE_EXE_LINKER_FLAGS: ""
-    buildResult:
-      variable: "CMAKE_CXX_ABI_COMPILED"
-      cached: true
-      stdout: |
-        Change Dir: '/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-D5RUY3'
-        
-        Run Build Command(s): /usr/bin/ninja -v cmTC_144b2
-        [1/2] /usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
-        clang version 21.1.8
-        Target: x86_64-pc-linux-gnu
-        Thread model: posix
-        InstalledDir: /usr/bin
-        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/15.2.1
-        Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1
-        Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1
-        Candidate multilib: .;@m64
-        Candidate multilib: 32;@m32
-        Selected multilib: .;@m64
-         (in-process)
-         "/usr/bin/clang++" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-D5RUY3 -v -fcoverage-compilation-dir=/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-D5RUY3 -resource-dir /usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1 -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/x86_64-pc-linux-gnu -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/backward -internal-isystem /usr/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
-        clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-pc-linux-gnu
-        ignoring nonexistent directory "/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include"
-        ignoring nonexistent directory "/include"
-        #include "..." search starts here:
-        #include <...> search starts here:
-         /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1
-         /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/x86_64-pc-linux-gnu
-         /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/backward
-         /usr/lib/clang/21/include
-         /usr/local/include
-         /usr/include
-        End of search list.
-        [2/2] : && /usr/bin/clang++  -v -Wl,-v CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_144b2   && :
-        clang version 21.1.8
-        Target: x86_64-pc-linux-gnu
-        Thread model: posix
-        InstalledDir: /usr/bin
-        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/15.2.1
-        Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1
-        Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1
-        Candidate multilib: .;@m64
-        Candidate multilib: 32;@m32
-        Selected multilib: .;@m64
-         "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_144b2 /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o
-        GNU ld (GNU Binutils) 2.46
-        
-      exitCode: 0
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:217 (message)"
-      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
-    message: |
-      Parsed CXX implicit include dir info: rv=done
-        found start of include info
-        found start of implicit include info
-          add: [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1]
-          add: [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/x86_64-pc-linux-gnu]
-          add: [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/backward]
-          add: [/usr/lib/clang/21/include]
-          add: [/usr/local/include]
-          add: [/usr/include]
-        end of search list found
-        collapse include dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1] ==> [/usr/include/c++/15.2.1]
-        collapse include dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/x86_64-pc-linux-gnu] ==> [/usr/include/c++/15.2.1/x86_64-pc-linux-gnu]
-        collapse include dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/backward] ==> [/usr/include/c++/15.2.1/backward]
-        collapse include dir [/usr/lib/clang/21/include] ==> [/usr/lib/clang/21/include]
-        collapse include dir [/usr/local/include] ==> [/usr/local/include]
-        collapse include dir [/usr/include] ==> [/usr/include]
-        implicit include dirs: [/usr/include/c++/15.2.1;/usr/include/c++/15.2.1/x86_64-pc-linux-gnu;/usr/include/c++/15.2.1/backward;/usr/lib/clang/21/include;/usr/local/include;/usr/include]
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:253 (message)"
-      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
-    message: |
-      Parsed CXX implicit link information:
-        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
-        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-D5RUY3']
-        ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_144b2]
-        ignore line: [[1/2] /usr/bin/clang++   -v -MD -MT CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
-        ignore line: [clang version 21.1.8]
-        ignore line: [Target: x86_64-pc-linux-gnu]
-        ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /usr/bin]
-        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Candidate multilib: .]
-        ignore line: [@m64]
-        ignore line: [Candidate multilib: 32]
-        ignore line: [@m32]
-        ignore line: [Selected multilib: .]
-        ignore line: [@m64]
-        ignore line: [ (in-process)]
-        ignore line: [ "/usr/bin/clang++" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-D5RUY3 -v -fcoverage-compilation-dir=/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-D5RUY3 -resource-dir /usr/lib/clang/21 -dependency-file CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1 -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/x86_64-pc-linux-gnu -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/backward -internal-isystem /usr/lib/clang/21/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -fdeprecated-macro -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -fcxx-exceptions -fexceptions -faddrsig -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o -x c++ /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
-        ignore line: [clang -cc1 version 21.1.8 based upon LLVM 21.1.8 default target x86_64-pc-linux-gnu]
-        ignore line: [ignoring nonexistent directory "/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include"]
-        ignore line: [ignoring nonexistent directory "/include"]
-        ignore line: [#include "..." search starts here:]
-        ignore line: [#include <...> search starts here:]
-        ignore line: [ /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1]
-        ignore line: [ /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/x86_64-pc-linux-gnu]
-        ignore line: [ /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/backward]
-        ignore line: [ /usr/lib/clang/21/include]
-        ignore line: [ /usr/local/include]
-        ignore line: [ /usr/include]
-        ignore line: [End of search list.]
-        ignore line: [[2/2] : && /usr/bin/clang++  -v -Wl -v CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_144b2   && :]
-        ignore line: [clang version 21.1.8]
-        ignore line: [Target: x86_64-pc-linux-gnu]
-        ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /usr/bin]
-        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Candidate multilib: .]
-        ignore line: [@m64]
-        ignore line: [Candidate multilib: 32]
-        ignore line: [@m32]
-        ignore line: [Selected multilib: .]
-        ignore line: [@m64]
-        link line: [ "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_144b2 /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o]
-          arg [/usr/bin/ld] ==> ignore
-          arg [--hash-style=gnu] ==> ignore
-          arg [--build-id] ==> ignore
-          arg [--eh-frame-hdr] ==> ignore
-          arg [-m] ==> ignore
-          arg [elf_x86_64] ==> ignore
-          arg [-pie] ==> ignore
-          arg [-dynamic-linker] ==> ignore
-          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
-          arg [-o] ==> ignore
-          arg [cmTC_144b2] ==> ignore
-          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o]
-          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o]
-          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
-          arg [-L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1] ==> dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-          arg [-L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64] ==> dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64]
-          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
-          arg [-L/usr/lib64] ==> dir [/usr/lib64]
-          arg [-L/lib] ==> dir [/lib]
-          arg [-L/usr/lib] ==> dir [/usr/lib]
-          arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_144b2.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
-          arg [-lstdc++] ==> lib [stdc++]
-          arg [-lm] ==> lib [m]
-          arg [-lgcc_s] ==> lib [gcc_s]
-          arg [-lgcc] ==> lib [gcc]
-          arg [-lc] ==> lib [c]
-          arg [-lgcc_s] ==> lib [gcc_s]
-          arg [-lgcc] ==> lib [gcc]
-          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
-          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o]
-        linker tool for 'CXX': /usr/bin/ld
-        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o] ==> [/usr/lib64/Scrt1.o]
-        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
-        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> [/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
-        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> [/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
-        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
-        collapse library dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1] ==> [/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-        collapse library dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64] ==> [/usr/lib64]
-        collapse library dir [/lib/../lib64] ==> [/lib64]
-        collapse library dir [/usr/lib64] ==> [/usr/lib64]
-        collapse library dir [/lib] ==> [/lib]
-        collapse library dir [/usr/lib] ==> [/usr/lib]
-        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
-        implicit objs: [/usr/lib64/Scrt1.o;/usr/lib64/crti.o;/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o;/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o;/usr/lib64/crtn.o]
-        implicit dirs: [/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1;/usr/lib64;/lib64;/lib;/usr/lib]
-        implicit fwks: []
-      
-      
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:38 (message)"
-      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:299 (cmake_determine_linker_id)"
-      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
-      - "CMakeLists.txt"
-    message: |
-      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
-      GNU ld (GNU Binutils) 2.46
-...
-
----
-events:
-  -
-    kind: "message-v1"
-    backtrace:
-      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:212 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
       - "CMakeLists.txt:2 (project)"
-    message: |
-      The system is: Linux - 6.19.9-arch1-1 - x86_64
+    mode: "program"
+    variable: "CMAKE_C_COMPILER"
+    description: "C compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "cc"
+      - "gcc"
+      - "cl"
+      - "bcc"
+      - "xlc"
+      - "icx"
+      - "clang"
+    candidate_directories:
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
+    searched_directories:
+      - "/home/joaco/.juliaup/bin/cc"
+      - "/home/joaco/.local/bin/cc"
+      - "/usr/local/bin/cc"
+    found: "/usr/bin/cc"
+    search_context:
+      ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
   -
     kind: "find-v1"
     backtrace:
@@ -1687,6 +208,8 @@ events:
     found: "/usr/share/cmake/Modules/CMakeCCompilerId.c.in"
     search_context:
       ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
         - "/usr/local/bin"
         - "/usr/bin"
         - "/var/lib/snapd/snap/bin"
@@ -1697,7 +220,7 @@ events:
         - "/usr/bin/vendor_perl"
         - "/usr/bin/core_perl"
         - "/usr/lib/rustup/bin"
-      CMAKE_INSTALL_PREFIX: "/usr/local"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
   -
     kind: "message-v1"
     backtrace:
@@ -1707,7 +230,7 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
-      Compiler: /usr/bin/clang 
+      Compiler: /usr/bin/cc 
       Build flags: 
       Id flags:  
       
@@ -1717,9 +240,760 @@ events:
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
       
-      The C compiler identification is Clang, found in:
-        /home/joaco/CGecko/build/CMakeFiles/4.3.0/CompilerIdC/a.out
+      The C compiler identification is GNU, found in:
+        /home/joaco/GitHub/CGecko/build/CMakeFiles/4.3.3/CompilerIdC/a.out
       
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
+      - "/usr/local/bin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
+    found: "/usr/bin/ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_RANLIB"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
+      - "/usr/local/bin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
+    found: "/usr/bin/ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "strip"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
+      - "/usr/local/bin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
+    found: "/usr/bin/strip"
+    search_context:
+      ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ld"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
+      - "/usr/local/bin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
+    found: "/usr/bin/ld"
+    search_context:
+      ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "nm"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
+      - "/usr/local/bin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
+    found: "/usr/bin/nm"
+    search_context:
+      ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objdump"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
+      - "/usr/local/bin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
+    found: "/usr/bin/objdump"
+    search_context:
+      ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objcopy"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
+      - "/usr/local/bin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
+    found: "/usr/bin/objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "readelf"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
+      - "/usr/local/bin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
+    found: "/usr/bin/readelf"
+    search_context:
+      ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "dlltool"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
+      - "/usr/local/bin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
+    searched_directories:
+      - "/usr/bin/dlltool"
+      - "/home/joaco/.juliaup/bin/dlltool"
+      - "/home/joaco/.local/bin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/var/lib/snapd/snap/bin/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/var/lib/flatpak/exports/bin/dlltool"
+      - "/usr/lib/jvm/default/bin/dlltool"
+      - "/usr/bin/site_perl/dlltool"
+      - "/usr/bin/vendor_perl/dlltool"
+      - "/usr/bin/core_perl/dlltool"
+      - "/usr/lib/rustup/bin/dlltool"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/dlltool"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "addr2line"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
+      - "/usr/local/bin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
+    found: "/usr/bin/addr2line"
+    search_context:
+      ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:243 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tapi"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
+      - "/usr/local/bin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
+    searched_directories:
+      - "/usr/bin/tapi"
+      - "/home/joaco/.juliaup/bin/tapi"
+      - "/home/joaco/.local/bin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/var/lib/snapd/snap/bin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/var/lib/flatpak/exports/bin/tapi"
+      - "/usr/lib/jvm/default/bin/tapi"
+      - "/usr/bin/site_perl/tapi"
+      - "/usr/bin/vendor_perl/tapi"
+      - "/usr/bin/core_perl/tapi"
+      - "/usr/lib/rustup/bin/tapi"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ar-16.1"
+      - "gcc-ar-16"
+      - "gcc-ar16"
+      - "gcc-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
+      - "/usr/local/bin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
+    searched_directories:
+      - "/usr/bin/gcc-ar-16.1"
+      - "/home/joaco/.juliaup/bin/gcc-ar-16.1"
+      - "/home/joaco/.local/bin/gcc-ar-16.1"
+      - "/usr/local/bin/gcc-ar-16.1"
+      - "/var/lib/snapd/snap/bin/gcc-ar-16.1"
+      - "/usr/local/sbin/gcc-ar-16.1"
+      - "/var/lib/flatpak/exports/bin/gcc-ar-16.1"
+      - "/usr/lib/jvm/default/bin/gcc-ar-16.1"
+      - "/usr/bin/site_perl/gcc-ar-16.1"
+      - "/usr/bin/vendor_perl/gcc-ar-16.1"
+      - "/usr/bin/core_perl/gcc-ar-16.1"
+      - "/usr/lib/rustup/bin/gcc-ar-16.1"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/gcc-ar-16.1"
+      - "/usr/bin/gcc-ar-16"
+      - "/home/joaco/.juliaup/bin/gcc-ar-16"
+      - "/home/joaco/.local/bin/gcc-ar-16"
+      - "/usr/local/bin/gcc-ar-16"
+      - "/var/lib/snapd/snap/bin/gcc-ar-16"
+      - "/usr/local/sbin/gcc-ar-16"
+      - "/var/lib/flatpak/exports/bin/gcc-ar-16"
+      - "/usr/lib/jvm/default/bin/gcc-ar-16"
+      - "/usr/bin/site_perl/gcc-ar-16"
+      - "/usr/bin/vendor_perl/gcc-ar-16"
+      - "/usr/bin/core_perl/gcc-ar-16"
+      - "/usr/lib/rustup/bin/gcc-ar-16"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/gcc-ar-16"
+      - "/usr/bin/gcc-ar16"
+      - "/home/joaco/.juliaup/bin/gcc-ar16"
+      - "/home/joaco/.local/bin/gcc-ar16"
+      - "/usr/local/bin/gcc-ar16"
+      - "/var/lib/snapd/snap/bin/gcc-ar16"
+      - "/usr/local/sbin/gcc-ar16"
+      - "/var/lib/flatpak/exports/bin/gcc-ar16"
+      - "/usr/lib/jvm/default/bin/gcc-ar16"
+      - "/usr/bin/site_perl/gcc-ar16"
+      - "/usr/bin/vendor_perl/gcc-ar16"
+      - "/usr/bin/core_perl/gcc-ar16"
+      - "/usr/lib/rustup/bin/gcc-ar16"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/gcc-ar16"
+    found: "/usr/bin/gcc-ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:2 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ranlib-16.1"
+      - "gcc-ranlib-16"
+      - "gcc-ranlib16"
+      - "gcc-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/joaco/.juliaup/bin/"
+      - "/home/joaco/.local/bin/"
+      - "/usr/local/bin/"
+      - "/var/lib/snapd/snap/bin/"
+      - "/usr/local/sbin/"
+      - "/var/lib/flatpak/exports/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/lib/rustup/bin/"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/"
+    searched_directories:
+      - "/usr/bin/gcc-ranlib-16.1"
+      - "/home/joaco/.juliaup/bin/gcc-ranlib-16.1"
+      - "/home/joaco/.local/bin/gcc-ranlib-16.1"
+      - "/usr/local/bin/gcc-ranlib-16.1"
+      - "/var/lib/snapd/snap/bin/gcc-ranlib-16.1"
+      - "/usr/local/sbin/gcc-ranlib-16.1"
+      - "/var/lib/flatpak/exports/bin/gcc-ranlib-16.1"
+      - "/usr/lib/jvm/default/bin/gcc-ranlib-16.1"
+      - "/usr/bin/site_perl/gcc-ranlib-16.1"
+      - "/usr/bin/vendor_perl/gcc-ranlib-16.1"
+      - "/usr/bin/core_perl/gcc-ranlib-16.1"
+      - "/usr/lib/rustup/bin/gcc-ranlib-16.1"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/gcc-ranlib-16.1"
+      - "/usr/bin/gcc-ranlib-16"
+      - "/home/joaco/.juliaup/bin/gcc-ranlib-16"
+      - "/home/joaco/.local/bin/gcc-ranlib-16"
+      - "/usr/local/bin/gcc-ranlib-16"
+      - "/var/lib/snapd/snap/bin/gcc-ranlib-16"
+      - "/usr/local/sbin/gcc-ranlib-16"
+      - "/var/lib/flatpak/exports/bin/gcc-ranlib-16"
+      - "/usr/lib/jvm/default/bin/gcc-ranlib-16"
+      - "/usr/bin/site_perl/gcc-ranlib-16"
+      - "/usr/bin/vendor_perl/gcc-ranlib-16"
+      - "/usr/bin/core_perl/gcc-ranlib-16"
+      - "/usr/lib/rustup/bin/gcc-ranlib-16"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/gcc-ranlib-16"
+      - "/usr/bin/gcc-ranlib16"
+      - "/home/joaco/.juliaup/bin/gcc-ranlib16"
+      - "/home/joaco/.local/bin/gcc-ranlib16"
+      - "/usr/local/bin/gcc-ranlib16"
+      - "/var/lib/snapd/snap/bin/gcc-ranlib16"
+      - "/usr/local/sbin/gcc-ranlib16"
+      - "/var/lib/flatpak/exports/bin/gcc-ranlib16"
+      - "/usr/lib/jvm/default/bin/gcc-ranlib16"
+      - "/usr/bin/site_perl/gcc-ranlib16"
+      - "/usr/bin/vendor_perl/gcc-ranlib16"
+      - "/usr/bin/core_perl/gcc-ranlib16"
+      - "/usr/lib/rustup/bin/gcc-ranlib16"
+      - "/home/joaco/.local/share/gem/ruby/3.4.0/bin/gcc-ranlib16"
+    found: "/usr/bin/gcc-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/joaco/.juliaup/bin"
+        - "/home/joaco/.local/bin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/var/lib/snapd/snap/bin"
+        - "/usr/local/sbin"
+        - "/var/lib/flatpak/exports/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+        - "/usr/lib/rustup/bin"
+        - "/home/joaco/.local/share/gem/ruby/3.4.0/bin"
   -
     kind: "try_compile-v1"
     backtrace:
@@ -1729,10 +1003,9 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-LvfD7P"
-      binary: "/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-LvfD7P"
+      source: "/home/joaco/GitHub/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-pOd8oK"
+      binary: "/home/joaco/GitHub/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-pOd8oK"
     cmakeVariables:
-      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "/usr/bin/clang-scan-deps"
       CMAKE_C_FLAGS: ""
       CMAKE_C_FLAGS_DEBUG: "-g"
       CMAKE_EXE_LINKER_FLAGS: ""
@@ -1740,44 +1013,55 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-LvfD7P'
+        Change Dir: '/home/joaco/GitHub/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-pOd8oK'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_82054
-        [1/2] /usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
-        clang version 22.1.1
+        Run Build Command(s): /usr/bin/ninja -v cmTC_97e68
+        [1/2] /usr/bin/cc   -v -o CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
         Target: x86_64-pc-linux-gnu
+        Configured with: /build/gcc/src/gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust,cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror --disable-fixincludes
         Thread model: posix
-        InstalledDir: /usr/bin
-        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/15.2.1
-        Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1
-        Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1
-        Candidate multilib: .;@m64
-        Candidate multilib: 32;@m32
-        Selected multilib: .;@m64
-         (in-process)
-         "/usr/bin/clang-22" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-LvfD7P -v -fcoverage-compilation-dir=/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-LvfD7P -resource-dir /usr/lib/clang/22 -dependency-file CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/clang/22/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -fdwarf2-cfi-asm -o CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c
-        clang -cc1 version 22.1.1 based upon LLVM 22.1.1 default target x86_64-pc-linux-gnu
-        ignoring nonexistent directory "/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include"
-        ignoring nonexistent directory "/include"
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 16.1.1 20260430 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_97e68.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_97e68.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccwDO3Rg.s
+        GNU C23 (GCC) version 16.1.1 20260430 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 16.1.1 20260430, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.27-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../x86_64-pc-linux-gnu/include"
         #include "..." search starts here:
         #include <...> search starts here:
-         /usr/lib/clang/22/include
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include
          /usr/local/include
          /usr/include
         End of search list.
-        [2/2] : && /usr/bin/clang  -v -Wl,-v CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o -o cmTC_82054   && :
-        clang version 22.1.1
+        Compiler executable checksum: d640c2d0cc84ebd71ee43ed7e2df63fb
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_97e68.dir/'
+         as -v --64 -o CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o /tmp/ccwDO3Rg.s
+        GNU assembler version 2.46.0 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46.0
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.'
+        [2/2] : && /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o -o cmTC_97e68   && :
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper
         Target: x86_64-pc-linux-gnu
+        Configured with: /build/gcc/src/gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust,cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror --disable-fixincludes
         Thread model: posix
-        InstalledDir: /usr/bin
-        Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/15.2.1
-        Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1
-        Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1
-        Candidate multilib: .;@m64
-        Candidate multilib: 32;@m32
-        Selected multilib: .;@m64
-         "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_82054 /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o
-        GNU ld (GNU Binutils) 2.46
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 16.1.1 20260430 (GCC) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_97e68' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_97e68.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccN5bp55.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_97e68 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o
+        collect2 version 16.1.1 20260430
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccN5bp55.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_97e68 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o
+        GNU ld (GNU Binutils) 2.46.0
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_97e68' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_97e68.'
         
       exitCode: 0
   -
@@ -1790,14 +1074,14 @@ events:
       Parsed C implicit include dir info: rv=done
         found start of include info
         found start of implicit include info
-          add: [/usr/lib/clang/22/include]
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include]
           add: [/usr/local/include]
           add: [/usr/include]
         end of search list found
-        collapse include dir [/usr/lib/clang/22/include] ==> [/usr/lib/clang/22/include]
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include]
         collapse include dir [/usr/local/include] ==> [/usr/local/include]
         collapse include dir [/usr/include] ==> [/usr/include]
-        implicit include dirs: [/usr/lib/clang/22/include;/usr/local/include;/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include;/usr/local/include;/usr/include]
       
       
   -
@@ -1810,97 +1094,108 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-LvfD7P']
+        ignore line: [Change Dir: '/home/joaco/GitHub/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-pOd8oK']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_82054]
-        ignore line: [[1/2] /usr/bin/clang   -v -MD -MT CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o -MF CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o.d -o CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
-        ignore line: [clang version 22.1.1]
+        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_97e68]
+        ignore line: [[1/2] /usr/bin/cc   -v -o CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
         ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: /build/gcc/src/gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ rust cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror --disable-fixincludes]
         ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /usr/bin]
-        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Candidate multilib: .]
-        ignore line: [@m64]
-        ignore line: [Candidate multilib: 32]
-        ignore line: [@m32]
-        ignore line: [Selected multilib: .]
-        ignore line: [@m64]
-        ignore line: [ (in-process)]
-        ignore line: [ "/usr/bin/clang-22" -cc1 -triple x86_64-pc-linux-gnu -emit-obj -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCCompilerABI.c -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=all -fmath-errno -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu x86-64 -tune-cpu generic -debugger-tuning=gdb -fdebug-compilation-dir=/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-LvfD7P -v -fcoverage-compilation-dir=/home/joaco/CGecko/build/CMakeFiles/CMakeScratch/TryCompile-LvfD7P -resource-dir /usr/lib/clang/22 -dependency-file CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o.d -MT CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o -sys-header-deps -internal-isystem /usr/lib/clang/22/include -internal-isystem /usr/local/include -internal-isystem /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include -internal-externc-isystem /include -internal-externc-isystem /usr/include -ferror-limit 19 -stack-protector 2 -fgnuc-version=4.2.1 -fskip-odr-check-in-gmf -faddrsig -fdwarf2-cfi-asm -o CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o -x c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
-        ignore line: [clang -cc1 version 22.1.1 based upon LLVM 22.1.1 default target x86_64-pc-linux-gnu]
-        ignore line: [ignoring nonexistent directory "/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../x86_64-pc-linux-gnu/include"]
-        ignore line: [ignoring nonexistent directory "/include"]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 16.1.1 20260430 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_97e68.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_97e68.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccwDO3Rg.s]
+        ignore line: [GNU C23 (GCC) version 16.1.1 20260430 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 16.1.1 20260430  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.27-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../x86_64-pc-linux-gnu/include"]
         ignore line: [#include "..." search starts here:]
         ignore line: [#include <...> search starts here:]
-        ignore line: [ /usr/lib/clang/22/include]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/include]
         ignore line: [ /usr/local/include]
         ignore line: [ /usr/include]
         ignore line: [End of search list.]
-        ignore line: [[2/2] : && /usr/bin/clang  -v -Wl -v CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o -o cmTC_82054   && :]
-        ignore line: [clang version 22.1.1]
+        ignore line: [Compiler executable checksum: d640c2d0cc84ebd71ee43ed7e2df63fb]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_97e68.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o /tmp/ccwDO3Rg.s]
+        ignore line: [GNU assembler version 2.46.0 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.46.0]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.']
+        ignore line: [[2/2] : && /usr/bin/cc  -v -Wl -v CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o -o cmTC_97e68   && :]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper]
         ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: /build/gcc/src/gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ rust cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-libssp --disable-libstdcxx-pch --disable-werror --disable-fixincludes]
         ignore line: [Thread model: posix]
-        ignore line: [InstalledDir: /usr/bin]
-        ignore line: [Found candidate GCC installation: /usr/bin/../lib/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Found candidate GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Selected GCC installation: /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-        ignore line: [Candidate multilib: .]
-        ignore line: [@m64]
-        ignore line: [Candidate multilib: 32]
-        ignore line: [@m32]
-        ignore line: [Selected multilib: .]
-        ignore line: [@m64]
-        link line: [ "/usr/bin/ld" --hash-style=gnu --build-id --eh-frame-hdr -m elf_x86_64 -pie -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_82054 /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1 -L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64 -L/lib/../lib64 -L/usr/lib64 -L/lib -L/usr/lib -v CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o]
-          arg [/usr/bin/ld] ==> ignore
-          arg [--hash-style=gnu] ==> ignore
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 16.1.1 20260430 (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_97e68' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_97e68.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccN5bp55.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_97e68 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccN5bp55.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s_asneeded] ==> ignore
+          arg [-plugin-opt=-pass-through=-latomic_asneeded] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s_asneeded] ==> ignore
           arg [--build-id] ==> ignore
           arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
           arg [-m] ==> ignore
           arg [elf_x86_64] ==> ignore
-          arg [-pie] ==> ignore
           arg [-dynamic-linker] ==> ignore
           arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_82054] ==> ignore
-          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o]
-          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o]
-          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
-          arg [-L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1] ==> dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-          arg [-L/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64] ==> dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64]
-          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
-          arg [-L/usr/lib64] ==> dir [/usr/lib64]
+          arg [cmTC_97e68] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../..]
           arg [-L/lib] ==> dir [/lib]
           arg [-L/usr/lib] ==> dir [/usr/lib]
           arg [-v] ==> ignore
-          arg [CMakeFiles/cmTC_82054.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o] ==> ignore
           arg [-lgcc] ==> lib [gcc]
-          arg [--as-needed] ==> ignore
-          arg [-lgcc_s] ==> lib [gcc_s]
-          arg [--no-as-needed] ==> ignore
+          arg [-lgcc_s_asneeded] ==> lib [gcc_s_asneeded]
+          arg [-latomic_asneeded] ==> lib [atomic_asneeded]
           arg [-lc] ==> lib [c]
           arg [-lgcc] ==> lib [gcc]
-          arg [--as-needed] ==> ignore
-          arg [-lgcc_s] ==> lib [gcc_s]
-          arg [--no-as-needed] ==> ignore
-          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
-          arg [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o] ==> obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o]
+          arg [-lgcc_s_asneeded] ==> lib [gcc_s_asneeded]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o]
+        ignore line: [collect2 version 16.1.1 20260430]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccN5bp55.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_97e68 /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_97e68.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o]
         linker tool for 'C': /usr/bin/ld
-        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/Scrt1.o] ==> [/usr/lib64/Scrt1.o]
-        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
-        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o] ==> [/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o]
-        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o] ==> [/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o]
-        collapse obj [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
-        collapse library dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1] ==> [/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1]
-        collapse library dir [/usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../lib64] ==> [/usr/lib64]
-        collapse library dir [/lib/../lib64] ==> [/lib64]
-        collapse library dir [/usr/lib64] ==> [/usr/lib64]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib/crtn.o] ==> [/usr/lib/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/../../..] ==> [/usr/lib]
         collapse library dir [/lib] ==> [/lib]
         collapse library dir [/usr/lib] ==> [/usr/lib]
-        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
-        implicit objs: [/usr/lib64/Scrt1.o;/usr/lib64/crti.o;/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtbeginS.o;/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1/crtendS.o;/usr/lib64/crtn.o]
-        implicit dirs: [/usr/lib64/gcc/x86_64-pc-linux-gnu/15.2.1;/usr/lib64;/lib64;/lib;/usr/lib]
+        implicit libs: [gcc;gcc_s_asneeded;atomic_asneeded;c;gcc;gcc_s_asneeded]
+        implicit objs: [/usr/lib/Scrt1.o;/usr/lib/crti.o;/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtbeginS.o;/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1/crtendS.o;/usr/lib/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/16.1.1;/usr/lib;/lib]
         implicit fwks: []
       
       
@@ -1913,5 +1208,5 @@ events:
       - "CMakeLists.txt:2 (project)"
     message: |
       Running the C compiler's linker: "/usr/bin/ld" "-v"
-      GNU ld (GNU Binutils) 2.46
+      GNU ld (GNU Binutils) 2.46.0
 ...

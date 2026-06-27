@@ -7,7 +7,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-fd6451d79dc282e2f566.json",
+					"jsonFile" : "directory-.-fd6451d79dc282e2f566.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.15"
@@ -20,7 +20,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "",
 			"projects" : 
 			[
 				{
@@ -40,7 +40,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Gecko::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Gecko-Debug-b0defed496664597a755.json",
+					"jsonFile" : "target-Gecko-7b86bdfaef360da6a621.json",
 					"name" : "Gecko",
 					"projectIndex" : 0
 				}
@@ -50,8 +50,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/joaco/CGecko/build",
-		"source" : "/home/joaco/CGecko"
+		"build" : "/home/joaco/GitHub/CGecko/build",
+		"source" : "/home/joaco/GitHub/CGecko"
 	},
 	"version" : 
 	{

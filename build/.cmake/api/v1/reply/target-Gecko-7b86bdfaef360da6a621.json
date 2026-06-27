@@ -40,7 +40,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu11"
+					"fragment" : "-std=gnu11"
 				}
 			],
 			"language" : "C",
@@ -70,13 +70,6 @@
 	"id" : "Gecko::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
-		"commandFragments" : 
-		[
-			{
-				"fragment" : "-g",
-				"role" : "flags"
-			}
-		],
 		"language" : "C"
 	},
 	"name" : "Gecko",

@@ -54,6 +54,7 @@ static InterpretResult run() {
 #define READ_ADVANCE_CONSTANT()                                                \
   (vm.chunk->constants.values[READ_ADVANCE_BYTE()])
 #define READ_STRING() ( AS_STRING(READ_ADVANCE_CONSTANT()) )
+#define READ_SHORT() (vm.ip += 2, (uint16_t) ((vm.ip[-2] << 8) | (vm.ip[-1])))
 #define OP_BINARIA(VAL_TYPE, op) \
   do { \
     if (!IS_NUM(peek(1)) || !IS_NUM(peek(0))){ \
@@ -169,12 +170,29 @@ static InterpretResult run() {
     case OP_POP: pop(); break;
     case OP_PRINT: printValue(pop()); printf("\n"); break;
     
+    case OP_JUMP_IF_FALSE: {
+      uint16_t offset = READ_SHORT();
+      if (isFalsey(peek(0))) vm.ip += offset;
+      break;
+    }
+
+    case OP_JUMP: {
+      uint16_t offset = READ_SHORT();
+      vm.ip += offset;
+      break;
+    }
+    case OP_LOOP: {
+      uint16_t offset = READ_SHORT();
+      vm.ip -= offset;
+      break;
+    }
   }
-  }
+}
 
 #undef READ_ADVANCE_BYTE
 #undef READ_ADVANCE_CONSTANT
 #undef READ_STRING
+#undef READ_SHORT
 }
 static void runTimeError(const char * format, ...){
   va_list args;

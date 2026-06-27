@@ -158,7 +158,7 @@ static Token checkKeyWord(){
   case 'm': return checkRest(1, 2, "ut", TOKEN_MUT);
   case 'v': return checkRest(1, 2, "ar", TOKEN_VAR);
   case 'w': return checkRest(1, 4, "hile", TOKEN_WHILE);
-
+  case 'l': return checkRest(1, 2, "et", TOKEN_LET);
   case 'r': 
     if (*(scanner.start+1) == 'e'){
       switch (*(scanner.start+2)) {
@@ -176,7 +176,12 @@ static Token checkKeyWord(){
     }
   case 't': 
     switch (*(scanner.start+1)) {
-    case 'h': return checkRest(2, 2, "is", TOKEN_THIS);
+    case 'h': 
+        switch(*(scanner.start+2)) {
+        case 'i': return checkRest(3,1, "s", TOKEN_THIS);
+        case 'e': return checkRest(3,1, "n", TOKEN_THEN);
+        default: return createToken(TOKEN_IDENTIFIER);
+        }
     case 'r': return checkRest(2, 2, "ue", TOKEN_TRUE);
     default: return createToken(TOKEN_IDENTIFIER);
     }

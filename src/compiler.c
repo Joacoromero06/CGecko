@@ -17,7 +17,9 @@ static void number(bool);
 static void string(bool); 
 static void variable(bool);
 static bool match(TokenType);
-
+static void _and(bool);
+static void _or(bool);
+static void varDeclaration();
 // ===GLOBALES===
 Parser parser;
 Chunk *compilingChunk;
@@ -52,8 +54,8 @@ ParseRule rules[] = {
 
     [TOKEN_TRUE]  = {literal, NULL, PRECEDENCIA_NONE},
     [TOKEN_FALSE] = {literal, NULL, PRECEDENCIA_NONE},
-    [TOKEN_AND]   = {NULL, NULL, PRECEDENCIA_NONE},
-    [TOKEN_OR]    = {NULL, NULL, PRECEDENCIA_NONE},
+    [TOKEN_AND]   = {NULL, _and, PRECEDENCIA_AND},
+    [TOKEN_OR]    = {NULL, _or,  PRECEDENCIA_OR},
 
     [TOKEN_IF]    = {NULL, NULL, PRECEDENCIA_NONE},
     [TOKEN_ELSE]  = {NULL, NULL, PRECEDENCIA_NONE},
@@ -169,6 +171,30 @@ static void endCompiler() {
   emitReturn();
 }
 static void emitReturn() { emitByte(OP_RETURN); }
+static void patchJump(int offset) {
+  // -2 to adjust bytecode to the jump offset it self
+  int jump = currentChunk()->count - offset - 2;
+
+  if ( jump > UINT16_MAX) {
+    errorAtPrevious("Too much code to jump over");
+  }
+  currentChunk()->code[offset] = (jump >> 8) & 0xff;
+  currentChunk()->code[offset+1] = jump & 0xff;
+}
+static int emitJump(uint8_t instruction) {
+  emitByte(instruction);
+  emitByte(0xff);
+  emitByte(0xff);
+
+  return currentChunk()->count-2;
+}
+static int emitLoop(int loopStart) {
+  emitByte(OP_LOOP);
+
+  int offset = currentChunk()->count - loopStart + 2;
+  emitByte((offset >> 8) & 0xff);
+  emitByte(offset & 0xff);
+}
 static void emitBytes(uint8_t b1, uint8_t b2) {
   emitByte(b1);
   emitByte(b2);
@@ -225,9 +251,101 @@ static void block() {
   }
   consume(TOKEN_RBRACE, "Esperaba '}' para finalizar el bloque.");
 }
+static void ifStatement(){
+  expression();
+  consume(TOKEN_THEN, "Expect 'then' after condition.");
+
+  int thenJump = emitJump(OP_JUMP_IF_FALSE);
+  emitByte(OP_POP);
+
+  statement(); // THEN BRANCH
+
+  int elseJump = emitJump(OP_JUMP); // JUMP ELSE IF WAS TRUE
+
+  patchJump(thenJump); // THEN JUMP POINTS to ELSE BRANCH is sense because thenJump is JUMP IF FALSE to else
+  emitByte(OP_POP);
+  if (match(TOKEN_ELSE)) statement();
+  patchJump(elseJump); // ELSE JUMP POINTS after ELSE BRACH so it skipit
+                       // if no else branch, thenJump skip then branch and pop, and elseJump skip no existing
+                       // else clause but after that pop, elseJump is for skip else, and not to pop twice in 
+                       // the flow of a true path
+}
+static void whileStatement() {
+  int loopStart = currentChunk()->count;
+
+  consume(TOKEN_LPAREN, "Expect '(' previous condition.");
+  expression();
+  consume(TOKEN_RPAREN, "Expect ')' after condition.");
+
+  int exitJump = emitJump(OP_JUMP_IF_FALSE);
+  emitByte(OP_POP);
+  statement(); 
+  emitLoop(loopStart);
+
+  patchJump(exitJump);
+  emitByte(OP_POP);  
+}
+static void forStatement() {
+  beginScope();
+
+  consume(TOKEN_LPAREN, "Expect '(' after for keyword.");
+  if (match(TOKEN_PUNTOCOMA)) {
+    // sin inicializador
+  } else if (match(TOKEN_VAR)) {
+    varDeclaration();
+  } else expressionStatement();
+  // varDeclaration or expressionStatement pop the initialize from stack and look for a ';'  
+ 
+
+  int loopStart = currentChunk()->count;
+
+  int exitJump = -1;
+  if (!match(TOKEN_PUNTOCOMA)) {
+    expression();
+    consume(TOKEN_PUNTOCOMA, "Expect ';' after for condition.");
+
+    exitJump = emitJump(OP_JUMP_IF_FALSE); // jump out the for loop if conition is false
+    emitByte(OP_POP); // condicion
+  }
+ 
+  if (!match(TOKEN_RPAREN)) {
+    int bodyJump = emitJump(OP_JUMP);
+
+    int incrementStart = currentChunk()->count;
+    expression();
+    emitByte(OP_POP);
+    consume(TOKEN_RPAREN, "Expect ')' after for incrementer.");
+
+    emitLoop(loopStart);
+    loopStart = incrementStart;
+    
+    patchJump(bodyJump); 
+  }
+
+  statement();
+
+  emitLoop(loopStart);
+  
+  // only if there is condition
+  if (exitJump != -1) { 
+    patchJump(exitJump);
+    emitByte(OP_POP); // condicion
+  }
+  endScope();
+}
+
 static void statement() {
   if (match(TOKEN_PRINT)) {
     printStatement();
+  }
+  else if (match(TOKEN_FOR)) {
+    forStatement();
+  }
+  else if (match(TOKEN_WHILE)) {
+    whileStatement();
+  }
+  else if (match(TOKEN_IF)) {
+    ifStatement();
   }
   else if (match(TOKEN_LBRACE)) {
     beginScope();
@@ -360,6 +478,28 @@ static void binary(bool canAssign) {
   case TOKEN_DIVISION: emitByte(OP_DIVIDIR); break;
   default: return;
   }
+}
+static void _and(bool canAssign) { 
+  int endJump = emitJump(OP_JUMP_IF_FALSE);
+  emitByte(OP_POP);
+  parsePrecedence(PRECEDENCIA_AND);
+  patchJump(endJump);
+}
+static void _or(bool canAssign) {
+  int elseJump = emitJump(OP_JUMP_IF_FALSE);
+  int endJump = emitJump(OP_JUMP);
+
+  /* skipCond LHS is true 
+   * Jump EXPRESION OR ES FALSE
+   * Jump EXPRESION OR ES TRUE
+   *
+   * EXPRESION OR ES FALSE: pop() , parse()
+   * EXPRESION OR ES TRUE: % nada el true rtdo queda en el top
+   */
+  patchJump(elseJump);
+  emitByte(OP_POP);
+  parsePrecedence(PRECEDENCIA_OR);
+  patchJump(endJump);
 }
 static void grouping(bool canAssign) {
   expression();
