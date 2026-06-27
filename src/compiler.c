@@ -66,7 +66,7 @@ ParseRule rules[] = {
     [TOKEN_RETURN] = {NULL, NULL, PRECEDENCIA_NONE},
     [TOKEN_END]    = {NULL, NULL, PRECEDENCIA_NONE},
 
-    [TOKEN_VAR] = {NULL, NULL, PRECEDENCIA_NONE},
+    [TOKEN_LET] = {NULL, NULL, PRECEDENCIA_NONE},
     [TOKEN_REF] = {NULL, NULL, PRECEDENCIA_NONE},
     [TOKEN_MUT] = {NULL, NULL, PRECEDENCIA_NONE},
 
@@ -216,7 +216,7 @@ static void synchronize() {
     case TOKEN_WHILE:
     case TOKEN_RETURN:
     case TOKEN_PRINT:
-    case TOKEN_VAR: return;
+    case TOKEN_LET: return;
     default:;
     }   
     advance();
@@ -291,7 +291,7 @@ static void forStatement() {
   consume(TOKEN_LPAREN, "Expect '(' after for keyword.");
   if (match(TOKEN_PUNTOCOMA)) {
     // sin inicializador
-  } else if (match(TOKEN_VAR)) {
+  } else if (match(TOKEN_LET)) {
     varDeclaration();
   } else expressionStatement();
   // varDeclaration or expressionStatement pop the initialize from stack and look for a ';'  
@@ -425,7 +425,7 @@ static void varDeclaration() {
   defineVar(global_var);
 }
 static void declaration() {
-  if (match(TOKEN_VAR)) {
+  if (match(TOKEN_LET)) {
     varDeclaration();
   }
   else {

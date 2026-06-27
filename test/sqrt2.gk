@@ -1,0 +1,18 @@
+let x = 2;
+let x_next = 0;
+let n = 100;
+let i = 1;
+
+let b = true;
+let diff = 1;
+let e = 0.0001;
+while (b and i < n) {
+  x_next = (x+2/x)/2;
+  diff = x_next - x;
+  if diff < 0 then diff = diff * -1;
+  if diff < e then 
+    b = false;
+  else {x = x_next; i = i + 1; }
+}
+print x_next;
+
