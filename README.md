@@ -11,9 +11,13 @@
 
 ---
 
-## Sobre
+## Lenguajes, Interpretes y Compiladores
 
-CGecko es un interprete que compila a bytecode para el Gecko Language. Su arquitectura permite entender como funcionan los interpretes de lenguajes reales como Java o Lua. El problema de implementar lenguajes trae varias dualidades que puedes entender con CGecko VM-Compilador Arquitectura-Organizacion Stack-Bytecode
+CGecko es un **interprete** que compila a bytecode para el Gecko **Language**. 
+
+Su arquitectura permite entender como funcionan los interpretes de lenguajes reales como Java o Lua. 
+
+El problema de implementar lenguajes trae varias dualidades que puedes entender con CGecko: VM-Compilador Arquitectura-Organizacion Stack-Bytecode
 
 ---
 
@@ -43,12 +47,16 @@ Aun no fue evaluado ni testeado.
 ---
 
 ## Referencias
+Si te interesa Lenguajes, Compiladores, Interpretes o solo quieres mejorar como profesional te recomiendo leer estos libros/documentos:
 
-[1] Nystrom, R. — Crafting Interpreters (2021)
-[2] Aho et al. — Compilers: Principles, Techniques & Tools (Dragon Book)
-[3] Robert W. Sebesta — Concepts of programming Languages 11th edition.
-[4] Joaco et al. — Módulos Compila e Interpreta, JAIIO 55 EST (2025)
-[5] Bruce Tate — Programming: Seven Languages in Seven Weeks
+[1] Robert W. Sebesta — Concepts of programming Languages 11th edition.
+
+[2] Bruce Tate — Programming: Seven Languages in Seven Weeks
+
+[3] Nystrom, R. — Crafting Interpreters (2021)
+
+[4] Aho et al. — Compilers: Principles, Techniques & Tools (Dragon Book)
+
 
 ---
 
