@@ -65,7 +65,6 @@ $$x_{next} = x - \frac{f(x)}{f'(x)}$$
 Obtenemos la formula de iteracion: 
 
 $$x_{next} = x - \frac{(x² - 2)}{2x} \iff x_{next} = \frac{x}{2} + \frac{1}{x} \iff x_{next} = \frac{1}{2}(x + \frac{2}{x})$$
--
 
 ---
 ### Pequeña explicacion
@@ -74,7 +73,7 @@ Si nos damos cuenta la formula es la **media aritmetica** de $x$ y $\frac{2}{x}$
 Sea la ecuacion de punto fijo relacionada al mismo problema:
 
 $$x² = 2 \iff x = \frac{2}{x} \iff x = g(x)$$
--
+
 
 La solucion, o punto fijo es $\sqrt{2}$, pero esta $g(x)$ no satisface las hipotesis del **teorema de punto fijo de Banach** ya que $g$ no es una _funcion contractiva_:
 
@@ -165,6 +164,10 @@ El interprete viene con la flag activada para dissasmbly de esa manera para cada
 ```
 
 ---
+
+## Sobre el proyecto
+Gecko es un lenguaje pequelo y de caso de estudio en el que sigo trabajando. Tiene muchos errores y especialmente carece de una buena interfaz amigable para usuarios comunes. Lo mas interesante del proyecto es que fue utilizado para la presentacion de un trabajo académico y que esta en desarrollo y tiene pendiente muchas optimizaciones.
+
 
 ## Referencias
 Si te interesa Lenguajes, Compiladores, Interpretes o solo quieres mejorar como profesional te recomiendo leer estos libros/documentos:
