@@ -37,22 +37,31 @@ En este caso CGecko es un interprete escrito en **C** (como cualquier otro progr
 ---
 
 ## Build & run
+Asegurate de tener CMake instalado.
 
+**Linux y Mac**
 ```bash
 git clone https://github.com/Joacoromero06/CGecko
-cd cgecko
-rm -rf build             # borrar el binario y compilar desde cero
-mkdir build && cd build  # crear directorio para compilar
-cmake -G Ninja ..        # es necesario los paquetes ninja y cmake para una compilacion mas rapida
-ninja                    # linkear el object file
+cd CGecko
+bash build.sh
 ```
+
+**Windows**
 ```bash
+git clone https://github.com/Joacoromero06/CGecko
+cd CGecko
+cmake -S . -B build
+cmake --build build
+```
+
+**Ejecutar**
+```
 # desde /build
 ./Gecko < ../test/sqrt2_inline.gk
 ```
 ---
 
-## Evaluación con el algoritmo Newton Raphson
+## Evaluación
 Se evaluó el **algoritmo** newton-raphson para obtener una _aproximacion de 3 puntos decimales_ de precision del valor **$\sqrt{2}$.**
 
 Como $\sqrt{2}$ es un _irracional_ **que cumple** $x = \sqrt{2}$ tambien cumplira $x² = 2$. **Planteando** una funcion cuya raiz sea $\sqrt{2}$: $0 = x² - 2$
@@ -67,7 +76,7 @@ Obtenemos la formula de iteracion:
 $$x_{next} = x - \frac{(x² - 2)}{2x} \iff x_{next} = \frac{x}{2} + \frac{1}{x} \iff x_{next} = \frac{1}{2}(x + \frac{2}{x})$$
 
 ---
-### Pequeña explicacion
+### Explicacion
 Si nos damos cuenta la formula es la **media aritmetica** de $x$ y $\frac{2}{x}$. Lo cual tiene sentido con el siguiente analisis:
 
 Sea la ecuacion de punto fijo relacionada al mismo problema:
